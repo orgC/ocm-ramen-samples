@@ -16,11 +16,11 @@ spec:
         appname: busybox
     spec:
       containers:
-        readinessProbe:
+      - readinessProbe:
           exec:
             command:
               - ls
-      - image: docker.io/library/busybox:stable
+        image: docker.io/library/busybox:stable
         imagePullPolicy: IfNotPresent
         name: busybox
         command: ['sh', '-c', 'trap exit TERM; while true; do echo $(date) | tee -a /mnt/test/outfile; sync; sleep 1; done']
