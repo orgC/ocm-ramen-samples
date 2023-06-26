@@ -16,6 +16,9 @@ spec:
         appname: busybox
     spec:
       containers:
+        readinessProbe:
+          exec:
+            command: ls
       - image: docker.io/library/busybox:stable
         imagePullPolicy: IfNotPresent
         name: busybox
